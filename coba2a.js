@@ -39,7 +39,7 @@ fetch(RSS_URL)
 
 const RSS_URL2 = "https://rss.kontan.co.id/news/keuangan";
 
-fetch(RSS_URL2)
+fetch("https://rss.tempo.co/bisnis"+RSS_URL2)
   .then(response => response.text())
   .then(str => xmlToJson(str))
   .then(json => JSON.parse(json))
