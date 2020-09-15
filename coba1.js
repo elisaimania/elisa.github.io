@@ -41,7 +41,7 @@ fetch(RSS_URL)
     div1.insertAdjacentHTML("beforeend", tambah);
   });
 
-  const RSS_URL2 = "http://rss.detik.com/index.php/detikcom_nasional";
+  const RSS_URL2 = "https://rss.kontan.co.id/news/keuangan";
 
   fetch(RSS_URL2)
     .then(response => response.text())
@@ -60,15 +60,12 @@ fetch(RSS_URL)
       let tambah = ``;
       items.forEach(el => {
         var title = el.querySelector("title").innerHTML;
-        title = title.replace("<![CDATA[","");
-        title = title.replace("]]>", "");
         var description = el.querySelector("description").innerHTML;
         description = description.replace("&lt;","<");
         description = description.replace('&quot;','"');
         description = description.replace("&gt;",">");
-        description = description.replace('hspace="7"','hspace="9"');
-        description = description.replace("<![CDATA[","");
-        description = description.replace("]]>", "");
+        description = description.replace('','hspace="9"');
+    
         tambah += `
           <article >
             <h2>
